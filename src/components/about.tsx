@@ -599,7 +599,7 @@ export default function About() {
                 <div className='absolute inset-0 bg-gradient-to-br from-amber-500/5 via-rose-500/3 to-violet-600/8 group-hover:from-amber-500/8 group-hover:via-rose-500/5 group-hover:to-violet-600/12 transition-all duration-700 z-10' />
 
                 <Image
-                  src='/sijan.png'
+                  src='/portfolio/sijan.png'
                   alt='Sijan Paudel'
                   width={500}
                   height={500}
