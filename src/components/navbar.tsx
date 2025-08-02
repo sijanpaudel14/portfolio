@@ -95,7 +95,7 @@ export default function Navbar() {
           <div className='flex justify-between items-center h-16'>
             {/* Logo */}
             <motion.div
-              className='text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-yellow-300 hover:via-pink-500 hover:to-red-600 transition-all duration-500 cursor-pointer drop-shadow-lg'
+              className='relative text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-yellow-300 hover:via-pink-500 hover:to-red-600 transition-all duration-500 cursor-pointer drop-shadow-lg group'
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               style={{
@@ -103,6 +103,13 @@ export default function Navbar() {
               }}
             >
               SIJAN
+              {/* Simple underline on hover */}
+              <div
+                className='absolute top-full left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out'
+                style={{
+                  marginTop: '2px',
+                }}
+              />
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -196,7 +203,7 @@ export default function Navbar() {
 
                   {/* Text - always white on gradient background */}
                   <span className='relative z-10 text-white font-medium'>
-                    Get in touch
+                    Get in Touch
                   </span>
 
                   {/* Shine effect on hover */}

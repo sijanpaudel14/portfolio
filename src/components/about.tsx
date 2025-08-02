@@ -610,46 +610,46 @@ export default function About() {
                 {/* Elegant corner accent */}
                 <div className='absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-transparent to-blue-500/5 group-hover:to-blue-500/10 transition-all duration-500' />
 
-                {/* Social links overlay with enhanced design */}
-                <div className='absolute left-6 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-20px] group-hover:translate-x-0 z-20'>
-                  <div className='flex flex-col space-y-3 p-4 bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-lg'>
+                {/* Social links overlay with enhanced design - Horizontal layout at bottom left */}
+                <div className='absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-[20px] group-hover:translate-y-0 z-20'>
+                  <div className='flex space-x-4 p-3 bg-black/30 dark:bg-black/40 backdrop-blur-md rounded-2xl border border-black/20 dark:border-black/30 shadow-lg'>
                     <motion.a
                       href='https://github.com/sijanpaudel14'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='p-3 bg-white/20 dark:bg-black/30 rounded-xl hover:bg-white/30 dark:hover:bg-black/40 transition-all duration-300 group/link'
+                      className='p-3 bg-black/40 dark:bg-black/50 rounded-xl hover:bg-black/60 dark:hover:bg-black/70 transition-all duration-300 group/link shadow-md hover:shadow-lg'
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Github
                         size={20}
-                        className='text-gray-800 dark:text-white group-hover/link:text-blue-500 transition-colors duration-300'
+                        className='text-white group-hover/link:text-blue-400 transition-colors duration-300'
                       />
                     </motion.a>
                     <motion.a
                       href='https://www.linkedin.com/in/sijanpaudel14/'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='p-3 bg-white/20 dark:bg-black/30 rounded-xl hover:bg-white/30 dark:hover:bg-black/40 transition-all duration-300 group/link'
+                      className='p-3 bg-black/40 dark:bg-black/50 rounded-xl hover:bg-black/60 dark:hover:bg-black/70 transition-all duration-300 group/link shadow-md hover:shadow-lg'
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Linkedin
                         size={20}
-                        className='text-gray-800 dark:text-white group-hover/link:text-blue-500 transition-colors duration-300'
+                        className='text-white group-hover/link:text-blue-400 transition-colors duration-300'
                       />
                     </motion.a>
                     <motion.a
                       href='https://x.com/sijanpaudel14'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='p-3 bg-white/20 dark:bg-black/30 rounded-xl hover:bg-white/30 dark:hover:bg-black/40 transition-all duration-300 group/link'
+                      className='p-3 bg-black/40 dark:bg-black/50 rounded-xl hover:bg-black/60 dark:hover:bg-black/70 transition-all duration-300 group/link shadow-md hover:shadow-lg'
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Twitter
                         size={20}
-                        className='text-gray-800 dark:text-white group-hover/link:text-blue-500 transition-colors duration-300'
+                        className='text-white group-hover/link:text-blue-400 transition-colors duration-300'
                       />
                     </motion.a>
                   </div>
