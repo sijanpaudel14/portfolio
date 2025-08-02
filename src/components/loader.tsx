@@ -23,14 +23,15 @@ export default function Loader({ onComplete }: LoaderProps) {
     <motion.div
       className='fixed inset-0 z-50 flex items-center justify-center bg-black'
       initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 1 }}
+      animate={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
     >
       <motion.h1
         className='text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient'
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         SIJANPAUDEL
       </motion.h1>

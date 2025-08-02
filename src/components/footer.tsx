@@ -30,7 +30,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
             className='text-center md:text-left'
           >
@@ -50,7 +50,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             viewport={{ once: true }}
             className='text-center'
           >
@@ -88,7 +88,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
             className='text-center md:text-right'
           >
@@ -120,14 +120,13 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
           className='border-t border-gray-800 mt-8 pt-8 text-center'
         >
           <p className='text-gray-400 text-sm'>
             © {new Date().getFullYear()} Sijan Paudel. All rights reserved.
           </p>
-          
         </motion.div>
       </div>
     </footer>

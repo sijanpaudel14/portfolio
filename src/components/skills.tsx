@@ -407,7 +407,7 @@ export default function Skills() {
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 20,
+            duration: 19,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
@@ -420,7 +420,7 @@ export default function Skills() {
             scale: [1, 0.8, 1],
           }}
           transition={{
-            duration: 25,
+            duration: 24,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
@@ -433,7 +433,7 @@ export default function Skills() {
             scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 30,
+            duration: 29,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
@@ -448,7 +448,7 @@ export default function Skills() {
             scale: [1, 1.5, 1],
           }}
           transition={{
-            duration: 8,
+            duration: 7,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
@@ -581,13 +581,13 @@ export default function Skills() {
           className='text-center mb-16'
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
         >
           <motion.div
             className='inline-block mb-8 relative'
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className='relative'>
               <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-70 animate-pulse'></div>

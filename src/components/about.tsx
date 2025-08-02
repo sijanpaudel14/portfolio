@@ -156,7 +156,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
           className='text-center mb-16'
         >
@@ -165,7 +165,7 @@ export default function About() {
             className='inline-block mb-8 relative'
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className='relative'>
               <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-70 animate-pulse'></div>

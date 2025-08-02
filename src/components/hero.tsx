@@ -62,7 +62,7 @@ export default function Hero() {
             scale: [1, 1.2],
           }}
           transition={{
-            duration: 20,
+            duration: 19,
             repeat: Infinity,
             repeatType: 'reverse',
             ease: 'easeInOut',
@@ -76,7 +76,7 @@ export default function Hero() {
             scale: [1, 0.9],
           }}
           transition={{
-            duration: 25,
+            duration: 24,
             repeat: Infinity,
             repeatType: 'reverse',
             ease: 'easeInOut',
@@ -90,7 +90,7 @@ export default function Hero() {
             scale: [1, 1.1],
           }}
           transition={{
-            duration: 30,
+            duration: 29,
             repeat: Infinity,
             repeatType: 'reverse',
             ease: 'easeInOut',
@@ -137,7 +137,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             className='flex-1 space-y-8'
           >
@@ -146,7 +146,7 @@ export default function Hero() {
               className='inline-block mb-8 relative'
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className='relative'>
                 <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-70 animate-pulse'></div>
@@ -234,7 +234,7 @@ export default function Hero() {
                 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight min-h-[180px] sm:min-h-[200px] md:min-h-[250px]'
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <span className='bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent whitespace-pre-line'>
                   {displayText}
@@ -254,7 +254,7 @@ export default function Hero() {
                 className='text-xl text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed'
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
               >
                 Passionate about{' '}
                 <span className='relative px-2 py-1 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-600 dark:text-blue-400 font-semibold rounded-lg border border-blue-200/30 dark:border-blue-700/30'>
@@ -271,7 +271,7 @@ export default function Hero() {
               className='flex items-center space-x-6'
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.7, delay: 0.7 }}
             >
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -314,7 +314,7 @@ export default function Hero() {
               className='flex flex-col sm:flex-row gap-4'
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={{ duration: 0.7, delay: 0.9 }}
             >
               <motion.a
                 href='#contact'
@@ -354,7 +354,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Download CV</span>
+                <span>View CV</span>
                 <Download
                   size={20}
                   className='group-hover:translate-y-1 transition-transform duration-300'
@@ -370,7 +370,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
             className='flex-shrink-0 relative self-center lg:self-start lg:mt-23'
           >
