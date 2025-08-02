@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import CustomCursor from '@/components/custom-cursor'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,6 +45,7 @@ export default function RootLayout({
           enableSystem
           storageKey='portfolio-theme'
         >
+          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>

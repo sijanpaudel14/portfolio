@@ -231,12 +231,12 @@ export default function Hero() {
             <div className='space-y-6'>
               {/* Animated text with coming/going effect */}
               <motion.h1
-                className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight min-h-[180px] sm:min-h-[200px] md:min-h-[250px]'
+                className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight min-h-[180px] sm:min-h-[200px] md:min-h-[250px] group cursor-pointer'
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
-                <span className='bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent whitespace-pre-line'>
+                <span className='bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent whitespace-pre-line group-hover:from-rose-400 group-hover:via-fuchsia-500 group-hover:to-indigo-500 transition-all duration-500'>
                   {displayText}
                 </span>
                 <motion.span

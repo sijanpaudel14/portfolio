@@ -95,9 +95,12 @@ export default function Navbar() {
           <div className='flex justify-between items-center h-16'>
             {/* Logo */}
             <motion.div
-              className='text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400 transition-all duration-500 cursor-pointer'
+              className='text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-yellow-300 hover:via-pink-500 hover:to-red-600 transition-all duration-500 cursor-pointer drop-shadow-lg'
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              style={{
+                filter: 'brightness(1.2) contrast(1.1)',
+              }}
             >
               SIJAN
             </motion.div>
