@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import emailjs from '@emailjs/browser'
 import {
   Mail,
   Phone,
@@ -26,6 +27,12 @@ interface FormData {
   message: string
 }
 
+interface EmailJSError {
+  status?: number
+  text?: string
+  message?: string
+}
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<
@@ -44,14 +51,70 @@ export default function Contact() {
     setSubmitStatus('idle')
 
     try {
-      // Simulate form submission (replace with actual EmailJS integration)
-      console.log('Form data:', data)
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      // EmailJS Configuration from environment variables
+      const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
+      // Debug logging
+      console.log('EmailJS Configuration:', {
+        SERVICE_ID: SERVICE_ID ? 'Set' : 'Missing',
+        TEMPLATE_ID: TEMPLATE_ID ? 'Set' : 'Missing',
+        PUBLIC_KEY: PUBLIC_KEY ? 'Set' : 'Missing',
+      })
+      console.log('Form data:', data)
+
+      // Check if EmailJS is configured
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        console.error(
+          'EmailJS configuration missing. Please check your .env.local file.'
+        )
+        console.error('Missing values:', {
+          SERVICE_ID: !SERVICE_ID,
+          TEMPLATE_ID: !TEMPLATE_ID,
+          PUBLIC_KEY: !PUBLIC_KEY,
+        })
+        throw new Error('EmailJS not configured')
+      }
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+        to_name: 'Sijan Paudel',
+        reply_to: data.email,
+      }
+
+      console.log('Sending email with params:', templateParams)
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      )
+
+      console.log('Email sent successfully:', result)
       setSubmitStatus('success')
       reset()
-    } catch (error) {
-      console.error('Form submission error:', error)
+    } catch (error: unknown) {
+      console.error('Email sending failed:', error)
+
+      // Type guard for EmailJS error
+      const isEmailJSError = (err: unknown): err is EmailJSError => {
+        return typeof err === 'object' && err !== null
+      }
+
+      const errorDetails = {
+        message: error instanceof Error ? error.message : String(error),
+        status: isEmailJSError(error) ? error.status : undefined,
+        text: isEmailJSError(error) ? error.text : undefined,
+      }
+
+      console.error('Error details:', errorDetails)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
