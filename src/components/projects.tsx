@@ -53,9 +53,9 @@ export default function Projects() {
       detailedDescription:
         'An intelligent YouTube video summarization tool that automatically extracts video transcripts and generates comprehensive summaries using state-of-the-art natural language processing techniques. The system provides key insights, sentiment analysis, and important timestamps, making it easy to quickly understand video content without watching the entire video.',
       images: [
-        '/portfolio/projects/youtube-summarizer/main.jpg',
-        '/portfolio/projects/youtube-summarizer/interface.jpg',
-        '/portfolio/projects/youtube-summarizer/results.jpg',
+        '/projects/youtube-summarizer/main.jpg',
+        '/projects/youtube-summarizer/interface.jpg',
+        '/projects/youtube-summarizer/results.jpg',
       ],
       category: 'genai',
       tech: ['Python', 'YouTube API', 'OpenAI', 'Streamlit', 'NLTK', 'Whisper'],
@@ -83,9 +83,9 @@ export default function Projects() {
       detailedDescription:
         'A comprehensive generative AI platform that combines multiple AI models to create various types of content. The system integrates GPT-4 for text generation, DALL-E 3 for image creation, and Codex for code generation. Features include custom prompt templates, fine-tuning capabilities, content optimization, and a user-friendly interface for seamless content creation workflows.',
       images: [
-        '/portfolio/projects/ai-content-generator/main.jpg',
-        '/portfolio/projects/ai-content-generator/interface.jpg',
-        '/portfolio/projects/ai-content-generator/results.jpg',
+        '/projects/ai-content-generator/main.jpg',
+        '/projects/ai-content-generator/interface.jpg',
+        '/projects/ai-content-generator/results.jpg',
       ],
       category: 'genai',
       tech: ['Python', 'OpenAI API', 'React', 'FastAPI', 'PostgreSQL', 'Redis'],
@@ -113,9 +113,9 @@ export default function Projects() {
       detailedDescription:
         'An advanced chatbot system leveraging LangChain framework and Retrieval-Augmented Generation (RAG) architecture. The system can process various document formats, maintain conversation context, and provide accurate responses based on knowledge bases. Features include document ingestion, vector embeddings, semantic search, and persistent memory for enhanced user interactions.',
       images: [
-        '/portfolio/projects/ai-chatbot/main.jpg',
-        '/portfolio/projects/ai-chatbot/interface.jpg',
-        '/portfolio/projects/ai-chatbot/features.jpg',
+        '/projects/ai-chatbot/main.jpg',
+        '/projects/ai-chatbot/interface.jpg',
+        '/projects/ai-chatbot/features.jpg',
       ],
       category: 'genai',
       tech: [
@@ -150,9 +150,9 @@ export default function Projects() {
       detailedDescription:
         'A specialized project focused on fine-tuning GPT models for domain-specific applications. The project involved data collection, preprocessing, model training, and evaluation. Successfully created custom models for technical documentation, customer support, and creative writing with significant performance improvements over general-purpose models.',
       images: [
-        '/portfolio/projects/gpt-finetuning/main.jpg',
-        '/portfolio/projects/gpt-finetuning/training.jpg',
-        '/portfolio/projects/gpt-finetuning/results.jpg',
+        '/projects/gpt-finetuning/main.jpg',
+        '/projects/gpt-finetuning/training.jpg',
+        '/projects/gpt-finetuning/results.jpg',
       ],
       category: 'genai',
       tech: [
@@ -187,9 +187,9 @@ export default function Projects() {
       detailedDescription:
         'An innovative image processing application that combines Stable Diffusion with ControlNet to achieve real-time style transfer. The system allows users to apply various artistic styles to images while maintaining structural integrity. Features include custom style training, batch processing, and an intuitive web interface for seamless user experience.',
       images: [
-        '/portfolio/projects/ai-style-transfer/main.jpg',
-        '/portfolio/projects/ai-style-transfer/demo.jpg',
-        '/portfolio/projects/ai-style-transfer/gallery.jpg',
+        '/projects/ai-style-transfer/main.jpg',
+        '/projects/ai-style-transfer/demo.jpg',
+        '/projects/ai-style-transfer/gallery.jpg',
       ],
       category: 'genai',
       tech: [
@@ -224,9 +224,9 @@ export default function Projects() {
       detailedDescription:
         'This project involves developing a comprehensive agricultural solution using YOLOv8 object detection model. The system can identify various diseases in cauliflower crops with high accuracy. The model was trained on a carefully curated dataset of 1,200 labeled images, addressing challenges like class imbalance through data augmentation techniques. The final implementation includes a user-friendly mobile application with multilingual support and voice assistance to help farmers easily identify crop diseases.',
       images: [
-        '/portfolio/projects/cauliflower-detection/main.jpg',
-        '/portfolio/projects/cauliflower-detection/model.jpg',
-        '/portfolio/projects/cauliflower-detection/app.jpg',
+        '/projects/cauliflower-detection/main.jpg',
+        '/projects/cauliflower-detection/model.jpg',
+        '/projects/cauliflower-detection/app.jpg',
       ],
       category: 'ai',
       tech: ['Python', 'OpenCV', 'YOLOv8', 'React Native', 'TensorFlow'],
@@ -284,9 +284,9 @@ export default function Projects() {
       detailedDescription:
         'An advanced NLP project that classifies movies into multiple genres based on plot descriptions. The project evolved from traditional TF-IDF with Logistic Regression to state-of-the-art BERT models. Special attention was given to handling multi-label classification challenges, class imbalance, and genre overlap issues. The final BERT implementation shows significant improvement in classification accuracy.',
       images: [
-        '/portfolio/projects/movie-genre/main.jpg',
-        '/portfolio/projects/movie-genre/analysis.jpg',
-        '/portfolio/projects/movie-genre/results.jpg',
+        '/projects/movie-genre/main.jpg',
+        '/projects/movie-genre/analysis.jpg',
+        '/projects/movie-genre/results.jpg',
       ],
       category: 'nlp',
       tech: [
@@ -321,9 +321,9 @@ export default function Projects() {
       detailedDescription:
         'A comprehensive SMS spam detection system that processes and classifies text messages. The project involved extensive text preprocessing including stemming, token filtering, and noise reduction. Multiple machine learning models were implemented and compared, with Naive Bayes and SVM showing the best performance for this specific use case.',
       images: [
-        '/portfolio/projects/spam-detection/main.jpg',
-        '/portfolio/projects/spam-detection/preprocessing.jpg',
-        '/portfolio/projects/spam-detection/performance.jpg',
+        '/projects/spam-detection/main.jpg',
+        '/projects/spam-detection/preprocessing.jpg',
+        '/projects/spam-detection/performance.jpg',
       ],
       category: 'nlp',
       tech: ['Python', 'NLTK', 'Scikit-learn', 'Pandas', 'Matplotlib'],
@@ -351,9 +351,9 @@ export default function Projects() {
       detailedDescription:
         'A machine learning solution for predicting customer churn in telecommunications. The project involved comprehensive data preprocessing including missing value imputation and handling class imbalance using SMOTE technique. Multiple models were evaluated with XGBoost showing superior performance in identifying potential churners.',
       images: [
-        '/portfolio/projects/churn-prediction/main.jpg',
-        '/portfolio/projects/churn-prediction/analysis.jpg',
-        '/portfolio/projects/churn-prediction/model.jpg',
+        '/projects/churn-prediction/main.jpg',
+        '/projects/churn-prediction/analysis.jpg',
+        '/projects/churn-prediction/model.jpg',
       ],
       category: 'ml',
       tech: ['Python', 'Pandas', 'XGBoost', 'Scikit-learn', 'SMOTE'],
@@ -377,9 +377,9 @@ export default function Projects() {
       detailedDescription:
         'An anomaly detection system for identifying fraudulent credit card transactions. The project tackled the challenge of extremely imbalanced datasets using Isolation Forest algorithm. The solution focuses on identifying outliers and anomalous patterns in transaction data to prevent financial fraud.',
       images: [
-        '/portfolio/projects/fraud-detection/main.jpg',
-        '/portfolio/projects/fraud-detection/model.jpg',
-        '/portfolio/projects/fraud-detection/results.jpg',
+        '/projects/fraud-detection/main.jpg',
+        '/projects/fraud-detection/model.jpg',
+        '/projects/fraud-detection/results.jpg',
       ],
       category: 'ml',
       tech: ['Python', 'Scikit-learn', 'Matplotlib', 'Pandas', 'Seaborn'],
@@ -403,9 +403,9 @@ export default function Projects() {
       detailedDescription:
         'A specialized translation system for English to Nepali language conversion. The project involved creating a comprehensive bilingual corpus and implementing rule-based translation algorithms. Special attention was given to handling syntactic differences between English and Nepali languages.',
       images: [
-        '/portfolio/projects/english-nepali-translator/main.jpg',
-        '/portfolio/projects/english-nepali-translator/interface.jpg',
-        '/portfolio/projects/english-nepali-translator/corpus.jpg',
+        '/projects/english-nepali-translator/main.jpg',
+        '/projects/english-nepali-translator/interface.jpg',
+        '/projects/english-nepali-translator/corpus.jpg',
       ],
       category: 'nlp',
       tech: ['Python', 'NLTK', 'Regular Expressions', 'XML Processing'],
@@ -433,9 +433,9 @@ export default function Projects() {
       detailedDescription:
         'An advanced NER system for identifying and classifying named entities in text. The project implemented BiLSTM-CRF architecture using the CoNLL-2003 dataset to detect persons, locations, and organizations. The model demonstrates strong performance in entity boundary detection and classification.',
       images: [
-        '/portfolio/projects/ner/main.jpg',
-        '/portfolio/projects/ner/model.jpg',
-        '/portfolio/projects/ner/evaluation.jpg',
+        '/projects/ner/main.jpg',
+        '/projects/ner/model.jpg',
+        '/projects/ner/evaluation.jpg',
       ],
       category: 'nlp',
       tech: ['Python', 'SpaCy', 'Scikit-learn', 'TensorFlow', 'CRF'],
