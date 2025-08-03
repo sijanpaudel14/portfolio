@@ -39,7 +39,6 @@ interface SkillCategory {
 }
 
 export default function Skills() {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
   const [activeCategory, setActiveCategory] = useState<string>(
     'Programming Languages'
   )
@@ -862,110 +861,173 @@ export default function Skills() {
                   <motion.div
                     key={skill.name}
                     className='group relative h-full'
-                    onMouseEnter={() => setHoveredSkill(skill.name)}
-                    onMouseLeave={() => setHoveredSkill(null)}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: skillIndex * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -10 }}
+                    whileHover={{ scale: 1.08, y: -15 }}
                   >
-                    <div className='relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg border border-gray-200/20 dark:border-gray-700/20 hover:shadow-2xl transition-all duration-500 h-full flex flex-col'>
-                      {/* Gradient border on hover */}
+                    {/* Glowing background effect */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 transform group-hover:scale-110`}
+                    ></div>
+
+                    <div className='relative bg-gradient-to-br from-white/95 via-white/90 to-white/80 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-xl rounded-3xl p-6 text-center shadow-2xl border border-white/20 dark:border-gray-700/30 hover:shadow-3xl transition-all duration-500 h-full flex flex-col overflow-hidden'>
+                      {/* Animated border gradient */}
                       <div
-                        className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                        className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
                       ></div>
+                      <div className='absolute inset-[1px] bg-gradient-to-br from-white/90 via-white/85 to-white/75 dark:from-gray-800/90 dark:via-gray-800/85 dark:to-gray-900/75 rounded-3xl'></div>
 
-                      {/* Skill Icon with enhanced animation */}
-                      <motion.div
-                        className={`relative w-20 h-20 mx-auto mb-4 bg-gradient-to-r ${skill.color} rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 overflow-hidden`}
-                        whileHover={{ rotate: 5 }}
-                      >
-                        <span className='text-3xl relative z-10'>
-                          {skill.icon}
-                        </span>
-                        {/* Shine effect */}
-                        <div className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000'></div>
-                      </motion.div>
+                      {/* Content wrapper */}
+                      <div className='relative z-10 flex flex-col h-full'>
+                        {/* Floating particles around icon */}
+                        <div className='absolute -top-2 -right-2 w-3 h-3 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce'></div>
+                        <div className='absolute -top-3 left-1/4 w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-pulse'></div>
+                        <div className='absolute -bottom-2 -left-2 w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-600 group-hover:animate-ping'></div>
 
-                      <h4 className='font-bold text-gray-900 dark:text-white text-lg mb-2'>
-                        {skill.name}
-                      </h4>
+                        {/* Enhanced Skill Icon */}
+                        <motion.div
+                          className={`relative w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${skill.color} rounded-3xl flex items-center justify-center shadow-2xl group-hover:shadow-3xl transition-all duration-500 overflow-hidden border-2 border-white/30 dark:border-gray-600/30`}
+                          whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
+                          transition={{ duration: 0.6 }}
+                        >
+                          {/* Icon glow effect */}
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-br ${skill.color} blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
+                          ></div>
 
-                      {/* Enhanced Progress Bar */}
-                      <div className='relative mb-4 flex-grow'>
-                        <div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 overflow-hidden shadow-inner'>
+                          <span className='text-4xl relative z-10 drop-shadow-lg filter group-hover:scale-110 transition-transform duration-300'>
+                            {skill.icon}
+                          </span>
+
+                          {/* Multi-layer shine effects */}
+                          <div className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/40 to-white/0 -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000'></div>
+                          <div className='absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-50'></div>
+
+                          {/* Rotating ring */}
                           <motion.div
-                            className={`bg-gradient-to-r ${skill.color} h-4 rounded-full relative overflow-hidden`}
-                            initial={{ width: 0 }}
-                            animate={{ width: `${skill.level}%` }}
+                            className='absolute inset-[-2px] border-2 border-white/30 rounded-3xl'
+                            animate={{ rotate: 360 }}
                             transition={{
-                              duration: 1,
-                              delay: skillIndex * 0.1,
-                              ease: 'easeOut',
+                              duration: 8,
+                              repeat: Infinity,
+                              ease: 'linear',
                             }}
-                          >
-                            <div className='absolute inset-0 bg-gradient-to-r from-white/30 to-transparent'></div>
+                          />
+                        </motion.div>
+
+                        <h4 className='font-bold text-gray-900 dark:text-white text-xl mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-600 group-hover:to-pink-600 transition-all duration-300'>
+                          {skill.name}
+                        </h4>
+
+                        {/* Beautiful Progress Bar */}
+                        <div className='relative mb-6 flex-grow'>
+                          <div className='w-full bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-full h-6 overflow-hidden shadow-inner border border-gray-300/50 dark:border-gray-600/50'>
                             <motion.div
-                              className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/50 to-white/0 -skew-x-12'
-                              animate={{ x: ['-200%', '200%'] }}
+                              className={`bg-gradient-to-r ${skill.color} h-6 rounded-full relative overflow-hidden shadow-lg`}
+                              initial={{ width: 0 }}
+                              animate={{ width: `${skill.level}%` }}
                               transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                ease: 'easeInOut',
+                                duration: 1.5,
+                                delay: skillIndex * 0.1,
+                                ease: 'easeOut',
                               }}
-                            />
+                            >
+                              {/* Multi-layer gradient overlay */}
+                              <div className='absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent'></div>
+                              <div className='absolute inset-0 bg-gradient-to-t from-black/10 to-transparent'></div>
+
+                              {/* Animated shine effect */}
+                              <motion.div
+                                className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/60 to-white/0 -skew-x-12'
+                                animate={{ x: ['-200%', '200%'] }}
+                                transition={{
+                                  duration: 2.5,
+                                  repeat: Infinity,
+                                  ease: 'easeInOut',
+                                  delay: skillIndex * 0.2,
+                                }}
+                              />
+
+                              {/* Pulsing glow */}
+                              <motion.div
+                                className={`absolute inset-0 bg-gradient-to-r ${skill.color} blur-sm opacity-50`}
+                                animate={{ opacity: [0.3, 0.7, 0.3] }}
+                                transition={{
+                                  duration: 2,
+                                  repeat: Infinity,
+                                  ease: 'easeInOut',
+                                }}
+                              />
+                            </motion.div>
+                          </div>
+
+                          {/* Progress stats */}
+                          <div className='flex justify-between items-center mt-3'>
+                            <motion.div
+                              className={`text-lg font-bold bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
+                              whileHover={{ scale: 1.1 }}
+                            >
+                              {skill.level}%
+                            </motion.div>
+                            <div className='text-sm text-gray-600 dark:text-gray-300 font-medium'>
+                              {skill.yearsExp} years exp
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Enhanced metrics with beautiful styling */}
+                        <div className='grid grid-cols-2 gap-4 pt-4 border-t border-gray-200/50 dark:border-gray-700/50'>
+                          <motion.div
+                            className='text-center group/metric cursor-pointer'
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            <div className='flex items-center justify-center space-x-1 mb-1'>
+                              <Trophy
+                                size={14}
+                                className='text-yellow-500 group-hover/metric:text-yellow-600 transition-colors'
+                              />
+                              <span className='text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover/metric:text-yellow-600 dark:group-hover/metric:text-yellow-400 transition-colors'>
+                                Projects
+                              </span>
+                            </div>
+                            <div className='text-xl font-bold text-gray-900 dark:text-white'>
+                              {skill.projects}
+                            </div>
+                          </motion.div>
+
+                          <motion.div
+                            className='text-center group/metric cursor-pointer'
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            <div className='flex items-center justify-center space-x-1 mb-1'>
+                              <Target
+                                size={14}
+                                className='text-blue-500 group-hover/metric:text-blue-600 transition-colors'
+                              />
+                              <span className='text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover/metric:text-blue-600 dark:group-hover/metric:text-blue-400 transition-colors'>
+                                Level
+                              </span>
+                            </div>
+                            <div
+                              className={`text-lg font-bold ${
+                                skill.level >= 85
+                                  ? 'text-emerald-600 dark:text-emerald-400'
+                                  : skill.level >= 70
+                                  ? 'text-blue-600 dark:text-blue-400'
+                                  : 'text-orange-600 dark:text-orange-400'
+                              }`}
+                            >
+                              {skill.level >= 85
+                                ? 'Expert'
+                                : skill.level >= 70
+                                ? 'Advanced'
+                                : 'Intermediate'}
+                            </div>
                           </motion.div>
                         </div>
-                        <div className='flex justify-between items-center mt-2'>
-                          <div className='text-sm font-bold text-gray-600 dark:text-gray-300'>
-                            {skill.level}%
-                          </div>
-                          <div className='text-xs text-gray-500 dark:text-gray-400'>
-                            {skill.yearsExp}y exp
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Additional metrics */}
-                      <div className='flex justify-between text-xs text-gray-500 dark:text-gray-400'>
-                        <span className='flex items-center space-x-1'>
-                          <Trophy size={12} />
-                          <span>{skill.projects} projects</span>
-                        </span>
-                        <span className='flex items-center space-x-1'>
-                          <Target size={12} />
-                          <span>
-                            {skill.level >= 85
-                              ? 'Expert'
-                              : skill.level >= 70
-                              ? 'Advanced'
-                              : 'Intermediate'}
-                          </span>
-                        </span>
                       </div>
                     </div>
-
-                    {/* Enhanced Tooltip */}
-                    {hoveredSkill === skill.name && (
-                      <motion.div
-                        className='absolute -top-32 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-6 py-4 rounded-2xl whitespace-nowrap z-30 shadow-2xl border border-gray-700 max-w-xs'
-                        initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                      >
-                        <div className='font-semibold mb-2 text-center'>
-                          {skill.name}
-                        </div>
-                        <div className='text-xs text-gray-300 text-center mb-2'>
-                          {skill.description}
-                        </div>
-                        <div className='flex justify-between text-xs text-gray-400'>
-                          <span>{skill.yearsExp} years</span>
-                          <span>{skill.projects} projects</span>
-                        </div>
-                        <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900'></div>
-                      </motion.div>
-                    )}
                   </motion.div>
                 ))}
               </div>
@@ -1007,86 +1069,146 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -10 }}
+                whileHover={{ scale: 1.08, y: -15 }}
               >
-                <div className='relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-gray-200/20 dark:border-gray-700/20 hover:shadow-2xl transition-all duration-500 h-full flex flex-col overflow-hidden'>
-                  {/* Gradient background on hover */}
+                {/* Enhanced glowing background */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${expertise.gradient} rounded-3xl opacity-0 group-hover:opacity-25 blur-2xl transition-all duration-700 transform group-hover:scale-110`}
+                ></div>
+
+                <div className='relative bg-gradient-to-br from-white/95 via-white/90 to-white/80 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 hover:shadow-3xl transition-all duration-700 h-full flex flex-col overflow-hidden'>
+                  {/* Animated border gradient */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${expertise.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                    className={`absolute inset-0 bg-gradient-to-br ${expertise.gradient} rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                   ></div>
+                  <div className='absolute inset-[1px] bg-gradient-to-br from-white/90 via-white/85 to-white/75 dark:from-gray-800/90 dark:via-gray-800/85 dark:to-gray-900/75 rounded-3xl'></div>
 
-                  {/* Enhanced Icon */}
-                  <motion.div
-                    className={`relative w-16 h-16 mx-auto mb-4 bg-gradient-to-r ${expertise.gradient} rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 overflow-hidden`}
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                  >
-                    {React.createElement(expertise.icon, {
-                      size: 28,
-                      className: 'text-white relative z-10',
-                    })}
-                    {/* Animated shine effect */}
+                  {/* Content wrapper */}
+                  <div className='relative z-10 flex flex-col h-full'>
+                    {/* Floating particles */}
+                    <div className='absolute -top-3 -right-3 w-4 h-4 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce'></div>
+                    <div className='absolute -top-4 left-1/3 w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-pulse'></div>
+                    <div className='absolute -bottom-3 -left-3 w-3 h-3 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-600 group-hover:animate-ping'></div>
+
+                    {/* Enhanced Icon with multiple effects */}
                     <motion.div
-                      className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -skew-x-12'
-                      animate={{ x: ['-200%', '200%'] }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                    />
-                  </motion.div>
+                      className={`relative w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${expertise.gradient} rounded-3xl flex items-center justify-center shadow-2xl group-hover:shadow-3xl transition-all duration-500 overflow-hidden border-2 border-white/30 dark:border-gray-600/30`}
+                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
+                      transition={{ duration: 0.8 }}
+                    >
+                      {/* Multiple glow layers */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${expertise.gradient} blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300`}
+                      ></div>
+                      <div
+                        className={`absolute inset-[-4px] bg-gradient-to-br ${expertise.gradient} blur-xl opacity-30 group-hover:opacity-70 transition-opacity duration-300`}
+                      ></div>
 
-                  <h4 className='text-xl font-bold mb-3 text-gray-900 dark:text-white text-center'>
-                    {expertise.title}
-                  </h4>
+                      {React.createElement(expertise.icon, {
+                        size: 32,
+                        className:
+                          'text-white relative z-10 drop-shadow-2xl filter group-hover:scale-110 transition-transform duration-300',
+                      })}
 
-                  <p className='text-gray-600 dark:text-gray-300 text-center mb-4 leading-relaxed flex-grow text-sm'>
-                    {expertise.description}
-                  </p>
+                      {/* Enhanced shine effects */}
+                      <div className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/50 to-white/0 -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1200'></div>
+                      <div className='absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-60'></div>
 
-                  {/* Enhanced Features with icons */}
-                  <div className='space-y-2 mb-4'>
-                    {expertise.features
-                      .slice(0, 4)
-                      .map((feature, featureIndex) => (
+                      {/* Rotating rings */}
+                      <motion.div
+                        className='absolute inset-[-3px] border-2 border-white/40 rounded-3xl'
+                        animate={{ rotate: 360 }}
+                        transition={{
+                          duration: 10,
+                          repeat: Infinity,
+                          ease: 'linear',
+                        }}
+                      />
+                      <motion.div
+                        className='absolute inset-[-6px] border border-white/20 rounded-3xl'
+                        animate={{ rotate: -360 }}
+                        transition={{
+                          duration: 15,
+                          repeat: Infinity,
+                          ease: 'linear',
+                        }}
+                      />
+                    </motion.div>
+
+                    <h4 className='text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-600 group-hover:to-pink-600 transition-all duration-300'>
+                      {expertise.title}
+                    </h4>
+
+                    <p className='text-gray-600 dark:text-gray-300 text-center mb-6 leading-relaxed flex-grow text-base'>
+                      {expertise.description}
+                    </p>
+
+                    {/* Enhanced Features with beautiful styling */}
+                    <div className='space-y-3 mb-6'>
+                      {expertise.features
+                        .slice(0, 4)
+                        .map((feature, featureIndex) => (
+                          <motion.div
+                            key={featureIndex}
+                            className='flex items-center space-x-3 text-sm text-gray-600 dark:text-gray-300 group/feature hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer'
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 + featureIndex * 0.1 }}
+                            whileHover={{ x: 5 }}
+                          >
+                            <div className='relative'>
+                              <Check
+                                size={16}
+                                className='text-emerald-500 group-hover/feature:text-emerald-600 transition-colors flex-shrink-0'
+                              />
+                              <div className='absolute inset-0 bg-emerald-400 blur-sm opacity-0 group-hover/feature:opacity-50 transition-opacity rounded-full'></div>
+                            </div>
+                            <span className='font-medium group-hover/feature:font-semibold transition-all'>
+                              {feature}
+                            </span>
+                          </motion.div>
+                        ))}
+                      {expertise.features.length > 4 && (
                         <motion.div
-                          key={featureIndex}
-                          className='flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300'
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.2 + featureIndex * 0.1 }}
+                          className='text-sm text-gray-500 dark:text-gray-400 text-center font-medium bg-gray-100/50 dark:bg-gray-700/50 rounded-lg py-2 px-3'
+                          whileHover={{ scale: 1.02 }}
                         >
-                          <Check
-                            size={14}
-                            className='text-green-500 flex-shrink-0'
-                          />
-                          <span>{feature}</span>
+                          +{expertise.features.length - 4} more advanced
+                          features
                         </motion.div>
-                      ))}
-                    {expertise.features.length > 4 && (
-                      <div className='text-xs text-gray-500 dark:text-gray-400 text-center'>
-                        +{expertise.features.length - 4} more features
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Enhanced Achievements */}
-                  <div className='pt-3 border-t border-gray-200/30 dark:border-gray-700/30'>
-                    <div className='flex items-center justify-center space-x-2 mb-2'>
-                      <Trophy size={16} className='text-yellow-500' />
-                      <span className='text-xs font-semibold text-gray-700 dark:text-gray-300'>
-                        Key Achievements
-                      </span>
+                      )}
                     </div>
-                    <div className='space-y-1'>
-                      {expertise.achievements.map((achievement, achIndex) => (
-                        <div
-                          key={achIndex}
-                          className='text-xs text-gray-600 dark:text-gray-400 text-center'
+
+                    {/* Enhanced Achievements with beautiful cards */}
+                    <div className='pt-6 border-t border-gray-200/50 dark:border-gray-700/50'>
+                      <div className='flex items-center justify-center space-x-2 mb-4'>
+                        <motion.div
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.5 }}
                         >
-                          {achievement}
-                        </div>
-                      ))}
+                          <Trophy size={20} className='text-yellow-500' />
+                        </motion.div>
+                        <span className='text-base font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent'>
+                          Key Achievements
+                        </span>
+                      </div>
+                      <div className='grid gap-3'>
+                        {expertise.achievements.map((achievement, achIndex) => (
+                          <motion.div
+                            key={achIndex}
+                            className='bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700/50 dark:to-gray-600/50 rounded-xl p-3 text-center border border-gray-200/30 dark:border-gray-600/30 hover:shadow-lg transition-all duration-300 cursor-pointer group/achievement'
+                            whileHover={{ scale: 1.02, y: -2 }}
+                          >
+                            <div className='text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover/achievement:text-gray-900 dark:group-hover/achievement:text-white transition-colors'>
+                              {achievement}
+                            </div>
+                            {/* Subtle glow effect */}
+                            <div
+                              className={`absolute inset-0 bg-gradient-to-r ${expertise.gradient} rounded-xl opacity-0 group-hover/achievement:opacity-5 transition-opacity duration-300`}
+                            ></div>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
