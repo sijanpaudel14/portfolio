@@ -411,7 +411,7 @@ export default function Hero() {
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <Image
-                  src='/sijan.png'
+                  src='/profile1.jpg'
                   alt='Sijan Paudel'
                   width={400}
                   height={400}
